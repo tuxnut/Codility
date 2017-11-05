@@ -38,6 +38,7 @@ int main(int argc, char **argv) {
     A.push_back(9);
     A.push_back(7);
     A.push_back(6);
+    A.push_back(6);
 
     auto start = std::chrono::high_resolution_clock::now();
 
