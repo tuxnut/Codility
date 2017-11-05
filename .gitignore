@@ -1,8 +1,2 @@
 # Ignore all
 *
-
-# Unignore .cpp / .hpp / .h and .c
-!*.cpp
-!*.hpp
-!*.c
-!*.h
