@@ -25,3 +25,4 @@ std::vector<int> CyclicRotation(std::vector<int> &A, int K);
 
 // lesson 3
 int PermMissingElem(std::vector<int> &A);
+int TapeEquilibrium(std::vector<int> &A);
