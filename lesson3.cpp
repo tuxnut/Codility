@@ -38,22 +38,30 @@ int TapeEquilibrium(std::vector<int> &A) {
     return minEquilibrium;
 }
 
+https://codility.com/demo/results/trainingYZEBSG-TET/
+int FrogJmp(int X, int Y, int D) {
+    int diff = (Y - X) % D;
+    return (diff == 0) ? (Y - X) / D : (Y - X) / D + 1;
+}
+
 int main(int argc, char **argv) {
     auto start = std::chrono::high_resolution_clock::now();
     
-    std::vector<int> A;
+    // std::vector<int> A;
     // A.push_back(2);
     // A.push_back(5);
     // A.push_back(3);
     // A.push_back(1);
     // std::cout << PermMissingElem(A) << std::endl;
 
-    A.push_back(3);
-    A.push_back(1);
-    A.push_back(2);
-    A.push_back(4);
-    A.push_back(3);
-    std::cout << TapeEquilibrium(A) << std::endl;
+    // A.push_back(3);
+    // A.push_back(1);
+    // A.push_back(2);
+    // A.push_back(4);
+    // A.push_back(3);
+    // std::cout << TapeEquilibrium(A) << std::endl;
+
+    std::cout << FrogJmp(10, 85, 30) << std::endl;
 
     auto finish = std::chrono::high_resolution_clock::now();
     std::chrono::duration<double> elapsed = finish - start;
