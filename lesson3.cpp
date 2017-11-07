@@ -38,7 +38,7 @@ int TapeEquilibrium(std::vector<int> &A) {
     return minEquilibrium;
 }
 
-https://codility.com/demo/results/trainingYZEBSG-TET/
+// https://codility.com/demo/results/trainingYZEBSG-TET/
 int FrogJmp(int X, int Y, int D) {
     int diff = (Y - X) % D;
     return (diff == 0) ? (Y - X) / D : (Y - X) / D + 1;

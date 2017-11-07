@@ -27,3 +27,5 @@ std::vector<int> CyclicRotation(std::vector<int> &A, int K);
 int PermMissingElem(std::vector<int> &A);
 int TapeEquilibrium(std::vector<int> &A);
 int FrogJmp(int X, int Y, int D);
+
+// lesson 4
