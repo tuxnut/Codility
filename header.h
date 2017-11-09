@@ -31,3 +31,5 @@ int FrogJmp(int X, int Y, int D);
 // lesson 4
 int PermCheck(std::vector<int> &A);
 int FrogRiverOne(int X, std::vector<int> &A);
+int MissingInteger(std::vector<int> &A);
+std::vector<int> MaxCounters(int N, std::vector<int> &A);

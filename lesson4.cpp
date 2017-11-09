@@ -29,6 +29,29 @@ int FrogRiverOne(int X, std::vector<int> &A) {
     return -1;
 }
 
+// https://codility.com/demo/results/trainingPUGY8Q-TCN/
+int MissingInteger(std::vector<int> &A) {
+    std::sort(A.begin(), A.end());
+    int bob = 1;
+
+    for(size_t i = 0; i < A.size(); i++) {
+        if(A[i] < 1) {
+            continue;
+        } else {
+            if(A[i] == bob) {
+                bob++;
+            }
+        }
+    }
+
+    return bob;
+}
+
+
+std::vector<int> MaxCounters(int N, std::vector<int> &A) {
+
+}
+
 int main(int argc, char **argv) {
     auto start = std::chrono::high_resolution_clock::now();
     
@@ -39,15 +62,25 @@ int main(int argc, char **argv) {
     // A.push_back(2);
     // std::cout << PermCheck(A) << std::endl;
 
-    A.push_back(1);
-    A.push_back(3);
-    A.push_back(1);
-    A.push_back(4);
-    A.push_back(2);
-    A.push_back(3);
-    A.push_back(5);
-    A.push_back(4);
-    std::cout << FrogRiverOne(5, A) << std::endl;
+    // A.push_back(1);
+    // A.push_back(3);
+    // A.push_back(1);
+    // A.push_back(4);
+    // A.push_back(2);
+    // A.push_back(3);
+    // A.push_back(5);
+    // A.push_back(4);
+    // std::cout << FrogRiverOne(5, A) << std::endl;
+
+    // A.push_back(1);
+    // A.push_back(3);
+    // A.push_back(6);
+    // A.push_back(4);
+    // A.push_back(1);
+    // A.push_back(2);
+    // A.push_back(1);
+    // A.push_back(-3);
+    // std::cout << MissingInteger(A) << std::endl;
 
     auto finish = std::chrono::high_resolution_clock::now();
     std::chrono::duration<double> elapsed = finish - start;
