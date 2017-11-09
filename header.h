@@ -16,6 +16,13 @@
 #define max(a, b) ((a > b) ? a : b)
 #define min(a, b) ((a < b) ? a : b)
 
+void displayVector(std::vector<int> &A) {
+    for(size_t i = 0; i < A.size(); i++) {
+        std::cout << A[i] << "\t";
+    }
+    std::cout << std::endl;
+}
+
 // lesson 1
 int binaryGap(int n);
 
