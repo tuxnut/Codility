@@ -17,8 +17,8 @@
 #define min(a, b) ((a < b) ? a : b)
 
 void displayVector(std::vector<int> &A) {
-    for(size_t i = 0; i < A.size(); i++) {
-        std::cout << A[i] << "\t";
+    for(auto const& value: A) {
+        std::cout << value << "\t";
     }
     std::cout << std::endl;
 }

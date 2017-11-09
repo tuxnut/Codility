@@ -47,23 +47,29 @@ int MissingInteger(std::vector<int> &A) {
     return bob;
 }
 
-// https://codility.com/demo/results/training6UTYYS-72Q/
+https://codility.com/demo/results/trainingUSGUR9-J94/
 std::vector<int> MaxCounters(int N, std::vector<int> &A) {
     std::vector<int> counter(N, 0);
-    int max = 0;
-    int offset = 0;
+    int lastMax = 0;
+    int currentMax = 0;
 
     for(size_t i = 0; i < A.size(); i++) {
         int value = A[i];
 
         // increase X
         if(1 <= value && value <= N) {
+            counter[value-1] = (counter[value-1] < lastMax) ? lastMax : counter[value-1];
+
             counter[value-1]++;
-            max = max(max, counter[value-1]);
+            currentMax = (counter[value-1] > currentMax) ? counter[value-1] : currentMax; //max(max, counter[value-1]);
         } // maxCounter
         else if(value == N + 1) {
-            counter = std::vector<int> (N, max);
+            lastMax = currentMax;
         }
+    }
+
+    for(auto & value: counter) {
+        value = (value < lastMax) ? lastMax : value;
     }
 
     displayVector(counter);
@@ -108,6 +114,11 @@ int main(int argc, char **argv) {
     A.push_back(1);
     A.push_back(4);
     A.push_back(4);
+    // A.push_back(1);
+    // A.push_back(2);
+    // A.push_back(3);
+    // A.push_back(4);
+    // A.push_back(5);
     MaxCounters(5, A);
     auto finish = std::chrono::high_resolution_clock::now();
 
