@@ -40,3 +40,6 @@ int PermCheck(std::vector<int> &A);
 int FrogRiverOne(int X, std::vector<int> &A);
 int MissingInteger(std::vector<int> &A);
 std::vector<int> MaxCounters(int N, std::vector<int> &A);
+
+// lesson 5
+int CountDiv(int A, int B, int K);

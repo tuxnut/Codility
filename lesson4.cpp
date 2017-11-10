@@ -47,7 +47,7 @@ int MissingInteger(std::vector<int> &A) {
     return bob;
 }
 
-https://codility.com/demo/results/trainingUSGUR9-J94/
+// https://codility.com/demo/results/trainingUSGUR9-J94/
 std::vector<int> MaxCounters(int N, std::vector<int> &A) {
     std::vector<int> counter(N, 0);
     int lastMax = 0;
