@@ -19,34 +19,55 @@ int CountDiv(int A, int B, int K) {
     return (B - A) / K + 1;
 }
 
+// https://codility.com/demo/results/trainingNYY69U-FJG/
 int PassingCars(std::vector<int> &A) {
     int P = 0;
-    int Q = 0;
+    int nbPairs = 0;
 
     for(unsigned i = 0; i < A.size(); i++) {
         if(A[i] == 0) {
-            
+            P++;        
         } else {
+            nbPairs += P;
+        }
 
+        if(nbPairs > 1000000000) {
+            return -1;
         }
     }
-    return 0;
+    return nbPairs;
+}
+
+
+int MinAvgTwoSlice(std::vector<int> &A) {
+    int length = 1;
+
+    
 }
 
 int main(int argc, char **argv) {
     std::vector<int> A;
 
-    A.push_back(0);
+    // A.push_back(0);
+    // A.push_back(1);
+    // A.push_back(0);
+    // A.push_back(1);
+    // A.push_back(1);
+    A.push_back(4);
+    A.push_back(2);
+    A.push_back(2);
     A.push_back(1);
-    A.push_back(0);
-    A.push_back(1);
-    A.push_back(1);
+    A.push_back(5);
+    A.push_back(8);
+    A.push_back(5);
 
     auto start = std::chrono::high_resolution_clock::now();
 
     // std::cout << CountDiv(1, 1, 1) << std::endl;
     
-    std::cout << PassingCars(A) << std::endl;
+    // std::cout << PassingCars(A) << std::endl;
+
+    std::cout << MinAvgTwoSlice(A) << std::endl;
 
     auto finish = std::chrono::high_resolution_clock::now();
     std::chrono::duration<double> elapsed = finish - start;
