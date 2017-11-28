@@ -13,6 +13,8 @@
 #include <stack>
 #include <chrono>
 
+//https://codility.com/demo/results/trainingN58C3E-BU2/
+
 #define max(a, b) ((a > b) ? a : b)
 #define min(a, b) ((a < b) ? a : b)
 
