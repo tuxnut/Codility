@@ -1,25 +1,25 @@
-#include <iostream>
-#include <climits>
-#include <vector>
+#include <algorithm>
 #include <assert.h>
+#include <chrono>
+#include <climits>
+#include <fstream>
+#include <gmpxx.h>
+#include <iostream>
+#include <iterator>
+#include <sstream>
+#include <stack>
 #include <stdio.h>
 #include <stdlib.h>
-#include <gmpxx.h>
-#include <fstream>
 #include <string>
-#include <sstream>
-#include <algorithm>
-#include <iterator>
-#include <stack>
-#include <chrono>
+#include <vector>
 
-//https://codility.com/demo/results/trainingN58C3E-BU2/
+// https://codility.com/demo/results/trainingN58C3E-BU2/
 
 #define max(a, b) ((a > b) ? a : b)
 #define min(a, b) ((a < b) ? a : b)
 
 void displayVector(std::vector<int> &A) {
-    for(auto const& value: A) {
+    for(auto const &value : A) {
         std::cout << value << "\t";
     }
     std::cout << std::endl;

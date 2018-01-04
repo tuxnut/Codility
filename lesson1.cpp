@@ -9,7 +9,7 @@ int binaryGap(int n) {
         if((n & 1) == 1) {
             max_gap = max(max_gap, current_gap);
             current_gap = 0;
-        } else if (current_gap != -1) {
+        } else if(current_gap != -1) {
             current_gap++;
         }
         n /= 2;
@@ -18,14 +18,13 @@ int binaryGap(int n) {
     return max_gap;
 }
 
-
 int main(int argc, char **argv) {
     auto start = std::chrono::high_resolution_clock::now();
 
     std::cout << binaryGap(1041) << std::endl;
 
     auto finish = std::chrono::high_resolution_clock::now();
-	std::chrono::duration<double> elapsed = finish - start;
-	std::cout << "Execution time: " << elapsed.count() << " s\n";
+    std::chrono::duration<double> elapsed = finish - start;
+    std::cout << "Execution time: " << elapsed.count() << " s\n";
     return 0;
 }

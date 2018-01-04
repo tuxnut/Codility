@@ -3,7 +3,7 @@
 // https://codility.com/demo/results/training65UHK8-EGH/
 int CountDiv(int A, int B, int K) {
     int diff_A = (A % K != 0) ? K - (A % K) : 0;
-    int diff_B = (B % K != 0) ? (B % K): 0;
+    int diff_B = (B % K != 0) ? (B % K) : 0;
 
     A += diff_A;
     B -= diff_B;
@@ -26,7 +26,7 @@ int PassingCars(std::vector<int> &A) {
 
     for(unsigned i = 0; i < A.size(); i++) {
         if(A[i] == 0) {
-            P++;        
+            P++;
         } else {
             nbPairs += P;
         }
@@ -38,28 +38,15 @@ int PassingCars(std::vector<int> &A) {
     return nbPairs;
 }
 
-
 int MinAvgTwoSlice(std::vector<int> &A) {
-    double sum = 0;
+    double sum = 0, avg = 0;
     int index = 0;
 
-    for(auto const value: A) {
+    // init
+    for(auto const value : A) {
         sum += value;
     }
-
-    double lastAvgMin;
-
-    for(unsigned i = 0; i < A.size() - 1 ; i++) {
-        double truc = A.size() - i;
-        if(i == 0) {
-            lastAvgMin = sum/truc;
-        }
-        if(sum/truc < lastAvgMin) {
-            lastAvgMin = sum/truc;
-            index = i;
-        }    
-        sum -= A[i];
-    }
+    avg = sum / A.size();
 
     return index;
 }
@@ -73,24 +60,24 @@ int main(int argc, char **argv) {
     // A.push_back(1);
     // A.push_back(1);
 
-    // A.push_back(4);
-    // A.push_back(2);
-    // A.push_back(2);
-    // A.push_back(5);
-    // A.push_back(1);
-    // A.push_back(5);
-    // A.push_back(8);
+    A.push_back(4);
+    A.push_back(2);
+    A.push_back(2);
+    A.push_back(5);
+    A.push_back(1);
+    A.push_back(5);
+    A.push_back(8);
 
-    A.push_back(-3);
-    A.push_back(-5);
-    A.push_back(-8);
-    A.push_back(-4);
-    A.push_back(-10);
+    // A.push_back(-3);
+    // A.push_back(-5);
+    // A.push_back(-8);
+    // A.push_back(-4);
+    // A.push_back(-10);
 
     auto start = std::chrono::high_resolution_clock::now();
 
     // std::cout << CountDiv(1, 1, 1) << std::endl;
-    
+
     // std::cout << PassingCars(A) << std::endl;
 
     std::cout << MinAvgTwoSlice(A) << std::endl;
