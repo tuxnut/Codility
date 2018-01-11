@@ -47,3 +47,6 @@ std::vector<int> MaxCounters(int N, std::vector<int> &A);
 int CountDiv(int A, int B, int K);
 int PassingCars(std::vector<int> &A);
 int MinAvgTwoSlice(std::vector<int> &A);
+
+// lession 6
+int Triangle(std::vector<int> &A);
