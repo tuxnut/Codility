@@ -19,7 +19,7 @@
 #define min(a, b) ((a < b) ? a : b)
 
 void displayVector(const std::vector<int> &A) {
-    for(auto const &value : A) {
+    for (auto const &value : A) {
         std::cout << value << "\t";
     }
     std::cout << std::endl;
@@ -46,7 +46,8 @@ std::vector<int> MaxCounters(int N, std::vector<int> &A);
 // lesson 5
 int CountDiv(int A, int B, int K);
 int PassingCars(std::vector<int> &A);
-std::vector<int> GenomicRangeQuery(std::string &S, std::vector<int> &P, std::vector<int> &Q);
+std::vector<int> GenomicRangeQuery(std::string &S, std::vector<int> &P,
+                                   std::vector<int> &Q);
 int MinAvgTwoSlice(std::vector<int> &A);
 
 // lession 6

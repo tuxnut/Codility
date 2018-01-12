@@ -2,12 +2,13 @@
 
 // https://codility.com/demo/results/training8MC94N-4RT/
 int PermMissingElem(std::vector<int> &A) {
-    if(A.size() == 0) return 1;
+    if (A.size() == 0)
+        return 1;
 
     std::sort(A.begin(), A.end());
 
-    for(size_t i = 0; i < A.size(); i++) {
-        if(A[i] != i + 1) {
+    for (size_t i = 0; i < A.size(); i++) {
+        if (A[i] != i + 1) {
             return i + 1;
         }
     }
@@ -21,13 +22,13 @@ int TapeEquilibrium(std::vector<int> &A) {
     int secondPart = 0;
 
     // secondPart = std::accumulate(A.begin() + 1, A.end, 0);
-    for(int i = 1; i < A.size(); i++) {
+    for (int i = 1; i < A.size(); i++) {
         secondPart += A[i];
     }
 
     int minEquilibrium = std::abs(firstPart - secondPart);
 
-    for(size_t i = 1; i < A.size() - 1; i++) {
+    for (size_t i = 1; i < A.size() - 1; i++) {
         firstPart += A[i];
         secondPart -= A[i];
 

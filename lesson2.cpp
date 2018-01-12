@@ -4,17 +4,18 @@
 int OddOccurrencesInArray(std::vector<int> &A) {
     std::sort(A.begin(), A.end());
 
-    for(size_t i = 0; i < A.size(); i += 2) {
-        if(A[i] != A[i + 1]) return A[i];
+    for (size_t i = 0; i < A.size(); i += 2) {
+        if (A[i] != A[i + 1])
+            return A[i];
     }
 }
 
 std::vector<int> CyclicRotation(std::vector<int> &A, int K) {
-    if(K == 0 || A.size() < 2 || K == A.size()) {
+    if (K == 0 || A.size() < 2 || K == A.size()) {
         return A;
     }
 
-    for(size_t i = 0; i < K; i++) {
+    for (size_t i = 0; i < K; i++) {
         A.insert(A.begin(), A.back());
         A.pop_back();
     }

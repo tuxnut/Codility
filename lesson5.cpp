@@ -8,11 +8,11 @@ int CountDiv(int A, int B, int K) {
     A += diff_A;
     B -= diff_B;
 
-    if(A % K != 0 || B % K != 0) {
+    if (A % K != 0 || B % K != 0) {
         std::cout << "problem !!!!!!" << std::endl;
     }
 
-    if(A > B) {
+    if (A > B) {
         return 0;
     }
 
@@ -24,75 +24,56 @@ int PassingCars(std::vector<int> &A) {
     int P = 0;
     int nbPairs = 0;
 
-    for(unsigned i = 0; i < A.size(); i++) {
-        if(A[i] == 0) {
+    for (unsigned i = 0; i < A.size(); i++) {
+        if (A[i] == 0) {
             P++;
         } else {
             nbPairs += P;
         }
 
-        if(nbPairs > 1000000000) {
+        if (nbPairs > 1000000000) {
             return -1;
         }
     }
     return nbPairs;
 }
 
-std::vector<int> GenomicRangeQuery(std::string &S, std::vector<int> &P, std::vector<int> &Q) {
+std::vector<int> GenomicRangeQuery(std::string &S, std::vector<int> &P,
+                                   std::vector<int> &Q) {
     std::vector<int> resQueries;
     int A = 1;
     int C = 2;
     int G = 3;
     int T = 4;
-
-    std::vector<int> sequence;
-
-    for(unsigned i = 0; i < S.size(); i++) {
-        if(S[i] == 'A')
-            sequence.push_back(A);
-        else if(S[i] == 'C')
-            sequence.push_back(C);
-        else if(S[i] == 'G')
-            sequence.push_back(G);
-        else if(S[i] == 'T')
-            sequence.push_back(T);
-    }
-
-    for(unsigned i = 0; i < P.size(); i++) {
-        int idxRange = P[i];
-        int min = sequence[idxRange];
-
-        for(unsigned x = idxRange; x <= Q[i]; x++) {
-            min = (sequence[x] < min) ? sequence[x] : min;
-        }
-
-        resQueries.push_back(min);
-    }
-
-    return resQueries;
 }
 
+// https://app.codility.com/demo/results/trainingDF3BC9-9ZJ/
 int MinAvgTwoSlice(std::vector<int> &A) {
-    double sum = 0, avg = 0;
+    // https://github.com/daotranminh/playground/blob/master/src/codibility/MinAvgTwoSlice/proof.pdf
+    // Just check slices of length 2 or 3
+
+    double minAvg = (A[0] + A[1]) / (double)2;
     int index = 0;
 
-    // init
-    for(auto const value : A) {
-        sum += value;
-    }
-    avg = sum / A.size();
+    for (unsigned i = 0; i < A.size() - 1; i++) {
+        // check length of 2
+        if ((A[i] + A[i + 1]) / (double)2 < minAvg) {
+            minAvg = (A[i] + A[i + 1]) / (double)2;
+            index = i;
+        }
 
+        // check length of 3
+        if (i < A.size() - 2 &&
+            (A[i] + A[i + 1] + A[i + 2]) / (double)3 < minAvg) {
+            minAvg = (A[i] + A[i + 1] + A[i + 2]) / (double)3;
+            index = i;
+        }
+    }
     return index;
 }
 
 int main(int argc, char **argv) {
     // std::vector<int> A;
-
-    // A.push_back(0);
-    // A.push_back(1);
-    // A.push_back(0);
-    // A.push_back(1);
-    // A.push_back(1);
 
     // A.push_back(4);
     // A.push_back(2);
@@ -102,11 +83,14 @@ int main(int argc, char **argv) {
     // A.push_back(5);
     // A.push_back(8);
 
-    // A.push_back(-3);
-    // A.push_back(-5);
-    // A.push_back(-8);
-    // A.push_back(-4);
-    // A.push_back(-10);
+    // A.push_back(10);
+    // A.push_back(10);
+    // A.push_back(-1);
+    // A.push_back(2);
+    // A.push_back(4);
+    // A.push_back(-1);
+    // A.push_back(2);
+    // A.push_back(-1);
 
     std::string S = "CAGCCTA";
     std::vector<int> P, Q;
@@ -125,7 +109,7 @@ int main(int argc, char **argv) {
     // std::cout << PassingCars(A) << std::endl;
 
     // std::cout << MinAvgTwoSlice(A) << std::endl;
-    
+
     std::vector<int> A = GenomicRangeQuery(S, P, Q);
 
     auto finish = std::chrono::high_resolution_clock::now();

@@ -5,11 +5,11 @@ int binaryGap(int n) {
     int max_gap = 0;
     int current_gap = -1;
 
-    while(n != 0) {
-        if((n & 1) == 1) {
+    while (n != 0) {
+        if ((n & 1) == 1) {
             max_gap = max(max_gap, current_gap);
             current_gap = 0;
-        } else if(current_gap != -1) {
+        } else if (current_gap != -1) {
             current_gap++;
         }
         n /= 2;

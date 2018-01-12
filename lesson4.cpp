@@ -4,8 +4,8 @@
 int PermCheck(std::vector<int> &A) {
     std::sort(A.begin(), A.end());
 
-    for(size_t i = 0; i < A.size(); i++) {
-        if(A[i] != i + 1) {
+    for (size_t i = 0; i < A.size(); i++) {
+        if (A[i] != i + 1) {
             return 0;
         }
     }
@@ -17,13 +17,13 @@ int FrogRiverOne(int X, std::vector<int> &A) {
     int cpt = 0;
     std::vector<int> way(X, 0);
 
-    for(size_t i = 0; i < A.size(); i++) {
-        if(way[A[i] - 1] == 0) {
+    for (size_t i = 0; i < A.size(); i++) {
+        if (way[A[i] - 1] == 0) {
             way[A[i] - 1] = A[i];
             cpt++;
         }
 
-        if(cpt == X) {
+        if (cpt == X) {
             return i;
         }
     }
@@ -36,11 +36,11 @@ int MissingInteger(std::vector<int> &A) {
     std::sort(A.begin(), A.end());
     int bob = 1;
 
-    for(size_t i = 0; i < A.size(); i++) {
-        if(A[i] < 1) {
+    for (size_t i = 0; i < A.size(); i++) {
+        if (A[i] < 1) {
             continue;
         } else {
-            if(A[i] == bob) {
+            if (A[i] == bob) {
                 bob++;
             }
         }
@@ -55,11 +55,11 @@ std::vector<int> MaxCounters(int N, std::vector<int> &A) {
     int lastMax = 0;
     int currentMax = 0;
 
-    for(size_t i = 0; i < A.size(); i++) {
+    for (size_t i = 0; i < A.size(); i++) {
         int value = A[i];
 
         // increase X
-        if(1 <= value && value <= N) {
+        if (1 <= value && value <= N) {
             counter[value - 1] =
                 (counter[value - 1] < lastMax) ? lastMax : counter[value - 1];
 
@@ -68,12 +68,12 @@ std::vector<int> MaxCounters(int N, std::vector<int> &A) {
                              ? counter[value - 1]
                              : currentMax; // max(max, counter[value-1]);
         }                                  // maxCounter
-        else if(value == N + 1) {
+        else if (value == N + 1) {
             lastMax = currentMax;
         }
     }
 
-    for(auto &value : counter) {
+    for (auto &value : counter) {
         value = (value < lastMax) ? lastMax : value;
     }
 
