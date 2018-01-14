@@ -13,8 +13,6 @@
 #include <string>
 #include <vector>
 
-// https://codility.com/demo/results/trainingN58C3E-BU2/
-
 #define max(a, b) ((a > b) ? a : b)
 #define min(a, b) ((a < b) ? a : b)
 
@@ -53,3 +51,7 @@ int MinAvgTwoSlice(std::vector<int> &A);
 // lession 6
 int Triangle(std::vector<int> &A);
 int Distinct(std::vector<int> &A);
+int MaxProductOfThree(std::vector<int> &A);
+
+// lesson 7
+int Brackets(char *S);

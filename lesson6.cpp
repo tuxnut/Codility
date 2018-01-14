@@ -46,6 +46,24 @@ int Distinct(std::vector<int> &A) {
     return cpt;
 }
 
+// https://app.codility.com/demo/results/trainingN58C3E-BU2/
+int MaxProductOfThree(std::vector<int> &A) {
+    std::sort(A.begin(), A.end());
+
+    if (*(A.end() - 1) < 0) {
+        return A[A.size() - 1] * A[A.size() - 2] * A[A.size() - 3];
+    } else {
+        if (*A.begin() > 0) {
+            return A[A.size() - 1] * A[A.size() - 2] * A[A.size() - 3];
+        } else {
+            int last = A[0] * A[1];
+            int high = A[A.size() - 2] * A[A.size() - 3];
+            int maxou = (last > high) ? last : high;
+            return maxou * A[A.size() - 1];
+        }
+    }
+}
+
 int main(int argc, char **argv) {
     std::vector<int> A;
 

@@ -45,6 +45,30 @@ std::vector<int> GenomicRangeQuery(std::string &S, std::vector<int> &P,
     int C = 2;
     int G = 3;
     int T = 4;
+
+    std::vector<int> impactFactor;
+    for (unsigned i = 0; i < S.size(); i++) {
+        if (S[i] == 'A')
+            impactFactor.push_back(A);
+        if (S[i] == 'C')
+            impactFactor.push_back(C);
+        if (S[i] == 'G')
+            impactFactor.push_back(G);
+        if (S[i] == 'T')
+            impactFactor.push_back(T);
+    }
+
+    for (unsigned i = 0; i < P.size(); i++) {
+        int lowerBound = P[i], upperBound = Q[i], min = 5;
+
+        for (unsigned ite = lowerBound; ite <= upperBound; ite++) {
+            min = (impactFactor[ite] < min) ? impactFactor[ite] : min;
+        }
+
+        resQueries.push_back(min);
+    }
+
+    return resQueries;
 }
 
 // https://app.codility.com/demo/results/trainingDF3BC9-9ZJ/
