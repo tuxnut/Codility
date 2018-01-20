@@ -55,3 +55,4 @@ int MaxProductOfThree(std::vector<int> &A);
 
 // lesson 7
 int Brackets(char *S);
+int Fish(std::vector<int> &A, std::vector<int> &B);
