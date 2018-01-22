@@ -5,14 +5,14 @@ int Brackets(std::string S) {
     std::stack<char> brackets;
 
     for(unsigned i = 0; i < S.size(); i++) {
-        if (S[i] == '(' || S[i] == '[' || S[i] == '{')
+        if(S[i] == '(' || S[i] == '[' || S[i] == '{')
             brackets.push(S[i]);
         else {
-            if (S[i] == ')' && brackets.top() == '(')
+            if(S[i] == ')' && brackets.top() == '(')
                 brackets.pop();
-            else if (S[i] == ']' && brackets.top() == '[')
+            else if(S[i] == ']' && brackets.top() == '[')
                 brackets.pop();
-            else if (S[i] == '}' && brackets.top() == '{')
+            else if(S[i] == '}' && brackets.top() == '{')
                 brackets.pop();
             else
                 return 0;
@@ -24,10 +24,12 @@ int Brackets(std::string S) {
 
 int Fish(std::vector<int> &A, std::vector<int> &B) {
 
-    std::stack<int> poiscaille;
+    for(unsigned i = 0; i < A.size(), i < B.size(); i++) {
+        if(B[i] == 0) {
 
-    for(unsigned i = 0; i < A.size(); i++) {
-        
+        } else {
+
+        }
     }
 
     return 0;
