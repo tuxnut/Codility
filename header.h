@@ -48,7 +48,7 @@ std::vector<int> GenomicRangeQuery(std::string &S, std::vector<int> &P,
                                    std::vector<int> &Q);
 int MinAvgTwoSlice(std::vector<int> &A);
 
-// lession 6
+// lesson 6
 int Triangle(std::vector<int> &A);
 int Distinct(std::vector<int> &A);
 int MaxProductOfThree(std::vector<int> &A);
@@ -56,3 +56,4 @@ int MaxProductOfThree(std::vector<int> &A);
 // lesson 7
 int Brackets(char *S);
 int Fish(std::vector<int> &A, std::vector<int> &B);
+int Nesting(std::string &S);
